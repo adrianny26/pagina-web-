@@ -1,0 +1,126 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #6a11cb, #2575fc, #ec008c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header, footer {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card-animated {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.card-animated:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: white;
+}
+
+.btn-wave {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background-color: #ff4757;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-wave:hover {
+    background-color: #e04050;
+}
+
+.btn-wave::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+    animation: ripple 1.5s ease-out infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0) translate(-50%);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(20, 20) translate(-50%);
+        opacity: 0;
+    }
+}
+
+.modal-content {
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #4a627a;
+}
+
+pre {
+    background-color: #1e2b38;
+    padding: 15px;
+    border-radius: 8px;
+    color: #a7c5e2;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.alert-info {
+    background-color: rgba(23, 162, 184, 0.2);
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.form-control {
+    background-color: #4a627a;
+    border: 1px solid #6c757d;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: #adb5bd;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
